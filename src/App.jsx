@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Banner from './components/Banner'
 import Header from './components/Header'
+import Players from './components/Players'
 
 function App () {
   const [coins, setCoins] = useState(0)
@@ -11,6 +12,7 @@ function App () {
     <div className='font-sora'>
       <Header coins={coins} />
       <Banner addCoin={handleAddFreeCredit} />
+      <Players />
     </div>
   )
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import bannerMain from '../assets/banner-main.png'
 
 const Banner = ({ addCoin }) => {
@@ -9,7 +8,7 @@ const Banner = ({ addCoin }) => {
         <h1 className='text-[2.5rem] font-bold'>
           Assemble Your Ultimate Dream 11 Cricket Team
         </h1>
-        <p className='text-white/70 text-2xl font-medium'>
+        <p className='text-white/70 text-2xl font-medium font-inter'>
           Beyond Boundaries Beyond Limits
         </p>
         <div className='inline-block border border-[#E7FE29] rounded-2xl'>
