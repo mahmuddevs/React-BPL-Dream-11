@@ -1,6 +1,6 @@
 import { FaUser } from 'react-icons/fa'
 import { IoFlag } from 'react-icons/io5'
-const PlayerCard = ({ player, selectPlayers }) => {
+const PlayerCard = ({ player, selectPlayers}) => {
   const { name, country, image, role, battingType, bowlingType, biddingPrice } =
     player
   return (

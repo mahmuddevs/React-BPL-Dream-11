@@ -5,7 +5,7 @@ const Banner = ({ addCoin }) => {
     <div className='container xl:w-9/12 mx-auto bg-black h-[65vh] rounded-2xl'>
       <div className='w-full banner-bg h-full flex flex-col justify-center items-center text-white gap-4 rounded-2xl'>
         <img src={bannerMain} alt='' />
-        <h1 className='text-[2.5rem] font-bold'>
+        <h1 className='text-[2.5rem] font-bold text-center'>
           Assemble Your Ultimate Dream 11 Cricket Team
         </h1>
         <p className='text-white/70 text-2xl font-medium font-inter'>

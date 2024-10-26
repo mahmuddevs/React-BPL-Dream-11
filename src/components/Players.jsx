@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import AllPlayers from './AllPlayers'
 import SelectedPlayers from './SelectedPlayers'
+import { toast } from 'react-toastify'
 
-const Players = () => {
+const Players = ({ buyPlayer }) => {
   const [availableSec, setActiveSec] = useState(true)
   const [selectedSec, setSelectedSec] = useState(false)
   const [players, setPlayers] = useState([])
@@ -30,17 +31,29 @@ const Players = () => {
     )
 
     if (duplicate) {
-      console.log('duplicate data')
+      toast.warn(`You Have Selected ${selected.name} Before!`)
       return
     }
     const updatedSelectedPlayers = [...selectedPlayers, selected]
     if (updatedSelectedPlayers.length > 6) {
-      console.log('limit excited')
+      toast.warn("Can't Select More than 6")
       return
     }
+
+    if (!buyPlayer(selected.biddingPrice)) {
+      toast.warn("Not Enough Money")
+      return
+    }
+
     setSelectedPlayers(updatedSelectedPlayers)
+    toast.success(`${selected.name} Is Now In Your Team`)
   }
-  console.log(selectedPlayers)
+
+  const handleRemovePlayer = (player) => {
+    const playersSelected = selectedPlayers.filter((existingPlayer) => existingPlayer.playerId !== player.playerId)
+    setSelectedPlayers(playersSelected)
+    toast.error(`${player.name} Is Being Removed`)
+  }
   return (
     <div className='my-24 w-[95%] sm:container xl:w-9/12 mx-auto'>
       <div className='flex justify-between'>
@@ -52,11 +65,10 @@ const Players = () => {
             onClick={() => {
               handleActiveSec('Available')
             }}
-            className={`py-3.5 px-5 ${
-              availableSec
-                ? 'bg-[#E7FE29] font-bold'
-                : 'font-normal text-[#131313]/60'
-            } rounded-l-xl`}
+            className={`py-3.5 px-5 ${availableSec
+              ? 'bg-[#E7FE29] font-bold'
+              : 'font-normal text-[#131313]/60'
+              } rounded-l-xl`}
           >
             Available
           </button>
@@ -64,11 +76,10 @@ const Players = () => {
             onClick={() => {
               handleActiveSec('Selected')
             }}
-            className={`py-3.5 px-5 ${
-              selectedSec
-                ? 'bg-[#E7FE29] font-bold'
-                : 'font-normal text-[#131313]/60'
-            } rounded-r-xl`}
+            className={`py-3.5 px-5 ${selectedSec
+              ? 'bg-[#E7FE29] font-bold'
+              : 'font-normal text-[#131313]/60'
+              } rounded-r-xl`}
           >
             Selected ({selectedPlayers.length})
           </button>
@@ -78,7 +89,7 @@ const Players = () => {
         {availableSec && (
           <AllPlayers players={players} selectPlayers={handleChoosePlayer} />
         )}
-        {selectedSec && <SelectedPlayers selectedPlayers={selectedPlayers} />}
+        {selectedSec && <SelectedPlayers selectedPlayers={selectedPlayers} addMore={handleActiveSec} removePlayer={handleRemovePlayer} />}
       </div>
     </div>
   )
