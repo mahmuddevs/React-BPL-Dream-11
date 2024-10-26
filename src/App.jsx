@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Banner from './components/Banner'
 import Header from './components/Header'
 import Players from './components/Players'
-import { ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Footer from './components/Footer'
 import Newsletter from './components/Newsletter'
@@ -11,6 +11,7 @@ function App() {
   const [coins, setCoins] = useState(0)
   const handleAddFreeCredit = () => {
     setCoins(coins + 60000)
+    toast.success('Free Credit Added To Your Account.')
   }
   const handleBuyingPlayer = price => {
     if (coins <= 0) {

@@ -1,9 +1,28 @@
 import logo from '../assets/logo.png'
 import coin from '../assets/coin.png'
+import { useState, useEffect } from 'react'
 const Header = ({ coins }) => {
+  const [scrolled, setScrolled] = useState(false)
+
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className='py-6'>
-      <div className='navbar bg-base-100 w-[95%] sm:container xl:w-9/12 mx-auto flex justify-between items-center'>
+    <div className={`${scrolled ? 'sticky top-0 z-50 backdrop-blur-md bg-white/30' : ''}`}>
+      <div className='navbar bg-transparent w-[95%] sm:container xl:w-9/12 mx-auto flex justify-between items-center py-6'>
         <div className='dropdown lg:hidden'>
           <div tabIndex={0} role='button' className='lg:hidden'>
             <svg

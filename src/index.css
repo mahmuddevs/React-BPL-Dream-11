@@ -26,5 +26,9 @@
 }
 
 .newsletter-btn {
-  background: linear-gradient(129deg, rgba(198, 111, 172, 1) 11%, rgba(239, 196, 89, 1) 47%);
+  background: linear-gradient(129deg, #c66fac 11%, #efc459 47%);
+}
+
+.footer-btn {
+  background: linear-gradient(240deg, #c66fac 11%, #efc459 47%);
 }

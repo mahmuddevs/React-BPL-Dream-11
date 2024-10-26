@@ -40,7 +40,7 @@ const PlayerCard = ({ player, selectPlayers }) => {
               onClick={() => {
                 selectPlayers(player)
               }}
-              className='px-4 py-2 border border-[#131313]/5 rounded-lg cursor-pointer'
+              className='px-4 py-2 border border-[#131313]/5 hover:bg-[#E7FE29] hover:font-semibold transition-colors ease-in-out duration-300 rounded-lg cursor-pointer'
             >
               Choose Player
             </a>
