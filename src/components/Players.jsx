@@ -58,7 +58,8 @@ const Players = ({ buyPlayer }) => {
     <div className='my-24 w-[95%] sm:container xl:w-9/12 mx-auto'>
       <div className='flex flex-col md:flex-row items-center md:justify-between'>
         <h3 className='text-[#131313] text-[1.75rem] font-bold'>
-          Available Players
+          {availableSec && 'Available Players'}
+          {selectedSec && `Selected Players (${selectedPlayers.length}/6)`}
         </h3>
         <div className='border border-[#131313]/10 flex items-center rounded-xl'>
           <button
