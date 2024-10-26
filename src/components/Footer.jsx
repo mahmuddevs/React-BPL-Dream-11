@@ -1,31 +1,32 @@
 import logoFooter from '../assets/logo-footer.png'
 const Footer = () => {
     return (
-        <div className='bg-[#06091A] -mt-40 text-white'>
-            <div className='py-48 w-[95%] sm:container xl:w-9/12 mx-auto'>
-                <img src={logoFooter} alt="" className='mx-auto' />
-                <div className='flex justify-between mt-16'>
-                    <div>
-                        <h3>About Us</h3>
-                        <p>We are a passionate team dedicated to providing the best services to our customers.</p>
+        <div className='bg-[#06091A] text-white'>
+            <div className='pt-48 pb-20 w-[95%] sm:container xl:w-9/12 mx-auto'>
+                <img src={logoFooter} alt="" className='mx-auto mt-8' />
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-y-6'>
+                    <div className=' space-y-4'>
+                        <h3 className='font-semibold text-lg'>About Us</h3>
+                        <p className='text-white/60 w-[80%]'>We are a passionate team dedicated to providing the best services to our customers.</p>
                     </div>
-                    <div>
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Services</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Contact</a></li>
+                    <div className='space-y-4 sm:place-self-center'>
+                        <h3 className='font-semibold text-lg'>Quick Links</h3>
+                        <ul className='list-disc ms-4 space-y-4'>
+                            <li className='text-white/60 hover:text-white'><a href="">Home</a></li>
+                            <li className='text-white/60 hover:text-white'><a href="">Services</a></li>
+                            <li className='text-white/60 hover:text-white'><a href="">About</a></li>
+                            <li className='text-white/60 hover:text-white'><a href="">Contact</a></li>
                         </ul>
                     </div>
-                    <div>
-                        <h3>
+                    <div className='sm:col-span-2 lg:col-span-1 space-y-4 sm:place-self-center sm:text-center lg:text-left lg:place-self-start'>
+                        <h3 className='font-semibold text-lg'>
                             Subscribe
                         </h3>
-                        <p>Subscribe to our newsletter for the latest updates.</p>
-                        <form className='flex gap-4 justify-center'>
-                            <input type="text" placeholder="Enter your email" className="input input-bordered w-full max-w-xs" />
-                            <button className='btn'>Subscribe</button>
+                        <p className='text-white/60 w-[80%] sm:mx-auto lg:mx-0'>Subscribe to our newsletter for the latest updates.</p>
+                        <form className='flex justify-start'>
+                            <input type="text" placeholder="Enter your email" className="input input-bordered w-full text-[#131313]/40 
+                            max-w-[28rem] rounded-r-none" />
+                            <button className='btn newsletter-btn rounded-l-none'>Subscribe</button>
                         </form>
                     </div>
                 </div>
