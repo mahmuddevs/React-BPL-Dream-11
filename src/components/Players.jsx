@@ -56,7 +56,7 @@ const Players = ({ buyPlayer }) => {
   }
   return (
     <div className='my-24 w-[95%] sm:container xl:w-9/12 mx-auto'>
-      <div className='flex justify-between'>
+      <div className='flex flex-col md:flex-row items-center md:justify-between'>
         <h3 className='text-[#131313] text-[1.75rem] font-bold'>
           Available Players
         </h3>

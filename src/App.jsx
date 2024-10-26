@@ -4,6 +4,8 @@ import Header from './components/Header'
 import Players from './components/Players'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Footer from './components/Footer'
+import Newsletter from './components/Newsletter'
 
 function App() {
   const [coins, setCoins] = useState(0)
@@ -25,6 +27,8 @@ function App() {
       <Header coins={coins} />
       <Banner addCoin={handleAddFreeCredit} />
       <Players coins={coins} buyPlayer={handleBuyingPlayer} />
+      <Newsletter />
+      <Footer />
       <ToastContainer
         position='top-center'
         autoClose={5000}

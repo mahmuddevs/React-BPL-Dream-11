@@ -1,12 +1,12 @@
 import { FaUser } from 'react-icons/fa'
 import { IoFlag } from 'react-icons/io5'
-const PlayerCard = ({ player, selectPlayers}) => {
+const PlayerCard = ({ player, selectPlayers }) => {
   const { name, country, image, role, battingType, bowlingType, biddingPrice } =
     player
   return (
     <div className='card bg-base-100 drop-shadow p-6 rounded-xl'>
       <figure className='rounded-xl mb-6'>
-        <img src={image} alt={name} className='h-64 rounded-xl' />
+        <img src={image} alt={name} className='h-64 rounded-xl w-full' />
       </figure>
       <div>
         <div className='flex items-center gap-4 mb-2'>

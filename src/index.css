@@ -17,3 +17,9 @@
   background-blend-mode: overlay;
   background-position: center;
 }
+.news-bg {
+  background:url('./assets/bg-news.png') no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-position: center;
+}
